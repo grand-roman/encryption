@@ -73,7 +73,7 @@ namespace Lab2
         }
 
   
-        void MetCaesarZ() {
+        void MetCaesarZ(`) {
 
             int count = Convert.ToInt32(B);
             int c2 = 0;
@@ -82,12 +82,6 @@ namespace Lab2
             {
                 c2 = (int)A[i];
                 if (c2 > 64 && c2 < 123)
-                {
-                    if (IsUpper(c2))  c2=(65+(c2+count)%65) ; 
-                    else  c2=(97+(c2+count)%97); 
-                }
-
-                if (c2 > 128 && c2 < 123)
                 {
                     if (IsUpper(c2))  c2=(65+(c2+count)%65) ; 
                     else  c2=(97+(c2+count)%97); 
@@ -105,18 +99,11 @@ namespace Lab2
             for (int i = 0; i < A.Length; i++)
             {
                 c2 = (int)A[i];
-                c2 -= count;
-                if (c2 < 65) { c2 += 26;  }
-                else if (c2 > 90) { c2 -= 26; }
-
-                else if (c2 < 97) { c2 += 26; }
-                else if (c2 > 122) { c2 -= 26; }
-                else if (c2 < 128) { c2 += 32; }
-                else if (c2 > 159) { c2 -= 32; }
-                else if (c2 < 160) { c2 += 32; }
-                else if (c2 > 175) { c2 -= 48; }
-                else if (c2 < 224) { c2 -= 48; }
-                else if (c2 > 239) { c2 -= 32; }
+                if (c2 > 64 && c2 < 123)
+                {
+                    if (IsUpper(c2))  c2=(65+(c2-count)%65) ; 
+                    else  c2=(97+(c2-count)%97); 
+                }
                 charStr[i] = (char)c2;
             }
             Sumi = new string(charStr);

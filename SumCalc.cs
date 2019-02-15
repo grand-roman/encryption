@@ -83,7 +83,7 @@ namespace Lab2
                 c2 = (int)A[i];
                 if (c2 > 64 && c2 < 123)
                 {
-                    if (IsUpper(A[i]))  c2=(65+(c2+count)%65) ; 
+                    if (char.IsUpper(A[i]))  c2=(65+(c2+count)%65) ; 
                     else  c2=(97+(c2+count)%97); 
                 }
                 charStr[i] = (char)c2; 
@@ -101,7 +101,7 @@ namespace Lab2
                 c2 = (int)A[i];
                 if (c2 > 64 && c2 < 123)
                 {
-                    if (IsUpper(A[i]))  c2=(65+(c2-count)%65) ; 
+                    if (char.IsUpper(A[i]))  c2=(65+(c2-count)%65) ; 
                     else  c2=(97+(c2-count)%97); 
                 }
                 charStr[i] = (char)c2;

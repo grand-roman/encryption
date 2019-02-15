@@ -81,10 +81,15 @@ namespace Lab2
             for(int i = 0; i < A.Length; i++)
             {
                 c2 = (int)A[i];
-                if (c2 > 64 && c2 < 123)
+                c2 += count;
+                if (char.IsUpper(A[i]))
                 {
-                    if (char.IsUpper(A[i]))  c2=(65+(c2+count)%65) ; 
-                    else  c2=(97+(c2+count)%97); 
+                    if (c2 < 65) c2 += 26;
+                    else if (c2 > 90) c2 -= 26;
+                }
+                else {
+                    if (c2 < 97) { c2 += 26; }
+                    else if (c2 > 122) { c2 -= 26; }
                 }
                 charStr[i] = (char)c2; 
             }
@@ -99,10 +104,16 @@ namespace Lab2
             for (int i = 0; i < A.Length; i++)
             {
                 c2 = (int)A[i];
-                if (c2 > 64 && c2 < 123)
+                c2 -= count;
+                if (char.IsUpper(A[i]))
                 {
-                    if (char.IsUpper(A[i]))  c2=(65+(c2-count)%65) ; 
-                    else  c2=(97+(c2-count)%97); 
+                    if (c2 < 65) c2 += 26;
+                    else if (c2 > 90) c2 -= 26;
+                }
+                else
+                {
+                    if (c2 < 97) { c2 += 26; }
+                    else if (c2 > 122) { c2 -= 26; }
                 }
                 charStr[i] = (char)c2;
             }

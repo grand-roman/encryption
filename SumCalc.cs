@@ -73,7 +73,7 @@ namespace Lab2
         }
 
   
-        void MetCaesarZ(`) {
+        void MetCaesarZ() {
 
             int count = Convert.ToInt32(B);
             int c2 = 0;

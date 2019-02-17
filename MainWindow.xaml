@@ -14,8 +14,6 @@
             >
             <StackPanel Orientation="Horizontal">
                 <TextBox Width="256" Text="{Binding A}" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" >
                 <Label   Width="50" Height="42">--------</Label>
                 <TextBox Text="{Binding B}" Width="149"/>
             </StackPanel>
@@ -37,6 +35,16 @@
                 HorizontalAlignment="Center">
 
             <Button Name="CaesarR" Width="50" Margin="5" Content="CaesarR" Command="{Binding TakeCaesarR}" />
+        </StackPanel>
+        <StackPanel>
+            <StackPanel>
+                <RadioButton GroupName="Method" Checked="Method" IsChecked="True">Цезарь</RadioButton>
+                <RadioButton GroupName="Method" Checked="Method"></RadioButton>
+            </StackPanel>
+            <StackPanel>
+                <RadioButton GroupName="Languages" Checked="Language" IsChecked="True">Английский</RadioButton>
+                <RadioButton GroupName="Languages" Checked="Language">Русский</RadioButton>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

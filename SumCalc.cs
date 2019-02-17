@@ -9,7 +9,7 @@ using System.Windows.Controls;
 
 namespace Lab2
 {
-
+    
     class MyCommand : ICommand
     {
         private SumCalc model;
@@ -35,29 +35,6 @@ namespace Lab2
 
         }
     }
-
-    //class MyCommandDel : ICommand
-    //{
-    //    private SumCalc model;
-
-    //    public MyCommandDel(SumCalc model)
-    //    {
-    //        this.model = model;
-    //    }
-
-    //    public event EventHandler CanExecuteChanged;
-
-    //    public bool CanExecute(object parameter)
-    //    {
-    //        return true;
-    //    }
-
-    //    public void Execute(object parameter)
-    //    {
-    //        model.Sumi = model.A - model.B;
-    //        model.OnPropertyChanged("Sumi");
-    //    }
-    //}
 
     class SumCalc : INotifyPropertyChanged
     {

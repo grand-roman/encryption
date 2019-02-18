@@ -54,6 +54,7 @@ namespace Lab2
 
             int count = Convert.ToInt32(B);
             int c2 = 0;
+            List<string> woords = new List<string>();
             char[] charStr = A.ToCharArray();
             for(int i = 0; i < A.Length; i++)
             {
@@ -63,15 +64,27 @@ namespace Lab2
                     if (char.IsUpper(A[i]))  c2=(65+(c2+count)%65) ; 
                     else  c2=(97+(c2+count)%97); 
                 }
-                charStr[i] = (char)c2; 
+               charStr[i] = (char)c2;
+                if (charStr[i]==' '){
+                    woords.Add(new string(charStr));
+                }
             }
-            Sumi = new string(charStr);
+                string c = "";
+            for (int i = 0; i < woords.Count; i++){
+                for (int j = 0; j <woords[i].Length; j++){
+                        c+=woords[j][i];
+                }
+                
+            }
+            foreach(string woord in woords)
+            Sumi = woord + ' ';
         }
 
         void MetCaesarR() {
 
             int count = Convert.ToInt32(B);
             int c2 = 0;
+            List<string> woords = new List<string>();
             char[] charStr = A.ToCharArray();
             for (int i = 0; i < A.Length; i++)
             {
@@ -82,8 +95,19 @@ namespace Lab2
                     else  c2=(97+(c2-count)%97); 
                 }
                 charStr[i] = (char)c2;
+                if (charStr[i]==' '){
+                    woords.Add(new string(charStr));
+                }
             }
-            Sumi = new string(charStr);
+            string c = "";
+            for (int i = 0; i < woords.Count; i++){
+                for (int j = 0; j <woords[i].Length; j++){
+                        c+=woords[j][i];
+                }
+                
+            }
+             foreach(string woord in woords)
+            Sumi = woord + ' ';
         }
 
         public string A { get; set; }

@@ -38,12 +38,12 @@
         </StackPanel>
         <StackPanel>
             <StackPanel>
-                <RadioButton GroupName="Method" Checked="Method" IsChecked="True">Цезарь</RadioButton>
-                <RadioButton GroupName="Method" Checked="Method"></RadioButton>
+                <RadioButton GroupName="Method">Цезарь</RadioButton>
+                <RadioButton GroupName="Method"></RadioButton>
             </StackPanel>
             <StackPanel>
-                <RadioButton GroupName="Languages" Checked="Language" IsChecked="True">Английский</RadioButton>
-                <RadioButton GroupName="Languages" Checked="Language">Русский</RadioButton>
+                <RadioButton GroupName="Languages" IsChecked="True">Английский</RadioButton>
+                <RadioButton GroupName="Languages">Русский</RadioButton>
             </StackPanel>
         </StackPanel>
     </Grid>

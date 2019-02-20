@@ -91,6 +91,7 @@ namespace Lab2
                     if (c2 < 97) { c2 += 26; }
                     else if (c2 > 122) { c2 -= 26; }
                 }
+     
                 charStr[i] = (char)c2; 
             }
             Sumi = new string(charStr);

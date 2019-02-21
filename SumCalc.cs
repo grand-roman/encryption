@@ -51,65 +51,84 @@ namespace Lab2
 
   
         void MetCaesarZ() {
-
-            int count = Convert.ToInt32(B);
-            int c2 = 0;
-            List<string> woords = new List<string>();
-            char[] charStr = A.ToCharArray();
-            for(int i = 0; i < A.Length; i++)
+   int count = Convert.ToInt32(B);
+        int c2 = 0;
+        List<string> woords = new List<string>();
+        string charStr = "";
+        char vr = ' ';
+        for(int i = 0; i < A.Length; i++)
+        {
+            c2 = (int)A[i];
+            if (c2 > 64 && c2 < 123)
             {
-                c2 = (int)A[i];
-                if (c2 > 64 && c2 < 123)
-                {
-                    if (char.IsUpper(A[i]))  c2=(65+(c2+count)%65) ; 
-                    else  c2=(97+(c2+count)%97); 
-                }
-               charStr[i] = (char)c2;
-                if (charStr[i]==' '){
-                    woords.Add(new string(charStr));
-                }
+                if (char.IsUpper(A[i]))  c2=(65+(c2+count)%65) ; 
+                else  c2=(97+(c2+count)%97); 
             }
-                string c = "";
-            for (int i = 0; i < woords.Count; i++){
-                for (int j = 0; j <woords[i].Length; j++){
-                        c+=woords[j][i];
-                }
-                
-            }
-            foreach(string woord in woords)
-            Sumi = woord + ' ';
-        }
-
-        void MetCaesarR() {
-
-            int count = Convert.ToInt32(B);
-            int c2 = 0;
-            List<string> woords = new List<string>();
-            char[] charStr = A.ToCharArray();
-            for (int i = 0; i < A.Length; i++)
+            vr = (char)c2;
+            if (vr != ' ')
             {
-                c2 = (int)A[i];
-                if (c2 > 64 && c2 < 123)
-                {
-                    if (char.IsUpper(A[i]))  c2=(65+(c2-count)%65) ; 
-                    else  c2=(97+(c2-count)%97); 
-                }
-                charStr[i] = (char)c2;
-                if (charStr[i]==' '){
-                    woords.Add(new string(charStr));
-                }
+                charStr += (char)c2;
             }
-            string c = "";
-            for (int i = 0; i < woords.Count; i++){
-                for (int j = 0; j <woords[i].Length; j++){
-                        c+=woords[j][i];
-                }
-                
+            
+            else if (vr==' '){
+                woords.Add(charStr);
+                charStr = "";
             }
-             foreach(string woord in woords)
-            Sumi = woord + ' ';
+            Console.WriteLine(charStr);
         }
+        foreach(string f in woords)
+        Console.WriteLine(f);
+        string c = "";
+        for (int i = 0; i < woords.Count; i++){
+            for (int j = 0; j <woords[i].Length; j++){
+                    c+=woords[j][i];
+            }
+            
+        }
+        
+            Sumi = c;
+    }
 
+    void MetCaesarR() {
+
+        int count = Convert.ToInt32(B);
+        int c2 = 0;
+        List<string> woords = new List<string>();
+        string charStr = "";
+        char vr = ' ';
+        for (int i = 0; i < A.Length; i++)
+        {
+            c2 = (int)A[i];
+            if (c2 > 64 && c2 < 123)
+            {
+                if (char.IsUpper(A[i]))  c2=(65+(c2-count)%65) ; 
+                else  c2=(97+(c2-count)%97); 
+            }
+            vr = (char)c2;
+            if (vr != ' ')
+            {
+                charStr += (char)c2;
+            }
+
+            else if (vr == ' ')
+            {
+                woords.Add(charStr);
+                charStr = "";
+            }
+            Console.WriteLine(charStr);
+        }
+        foreach (string f in woords)
+            Console.WriteLine(f);
+        string c = "";
+        for (int i = 0; i < woords.Count; i++){
+            for (int j = 0; j <woords[i].Length; j++){
+                    c+=woords[j][i];
+            }
+            
+        }
+         
+            Sumi = c;
+    }
         public string A { get; set; }
 
         public string B { get; set; }
